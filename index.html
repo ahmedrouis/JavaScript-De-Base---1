@@ -1,0 +1,128 @@
+<!Doctype html>
+
+<html>
+<head>
+<title> Exercice JS</title>
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .menueditor{
+       position: relative; 
+      background-color: lightblue;
+       border: 1px solid black;
+       width: 450px;
+       padding: 10px;
+       padding-left: 130px;
+       padding-right: 25px;
+       border-radius: 0px 25px 0px 25px;
+       
+
+       
+ }
+select {
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+color: rgb(0, 0, 0);
+margin-bottom: 50px;
+border: 1px solid;
+width: 125px;
+border-radius: 10px 0 10px 0;
+font-size: 15px;
+font-weight: bold;
+}
+
+button{
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+border-radius: 10px 0 10px 0;
+margin-left: 25px;
+margin-bottom: 50px;
+}  
+
+button:hover{
+    background-color:lightblue;
+}
+select:hover{
+    font-style: italic;
+    font-size: 10px;
+}
+hr{
+  margin-right: 75px;
+
+}
+textarea{
+    width: 350px;
+    height:200px ;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="menueditor">
+<select id="fontfamily"  onchange="myfontfamily()">
+    <option>select font</option>
+  <option value="Georgia">Georgia</option>
+  <option value="alatino Linotype">Palatino Linotype</option>
+  <option value="Book Antiqua">Book Antiqua</option>
+  <option value="Times New Roman">Times New Roman</option>
+  <option value="Arial">Arial</option>
+  <option value="Helvetica">Helvetica</option>
+  <option value="Arial Black">Arial Black</option>
+  <option value="Impact">Impact</option>
+  <option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+  <option value="Tahoma">Tahoma</option>
+  <option value="Verdana">Verdana</option>
+  <option value="Courier New">Courier New</option>
+  <option value="Lucida Console">Lucida Console</option>
+</select>
+
+<select id="fontsize"  onchange="myfontsize()">
+   <option>select size</option>
+   <option value="10px">10</option>
+   <option value="25px">25</option>
+   <option value="50px">50</option>
+   <option value="75px">75</option>
+   <option value="100px">100</option>
+</select>
+
+<button id="bold" type="button" onclick="mybold()" value="bold" ><i class="fa fa-bold"></i></button>
+<button id="italic" type="button" onclick="myitalic()" value="italic"><i class="fa fa-italic"></i></button>
+<button id="underline" type="button" onclick="myunderline()"  value="underline"><i class="fa fa-underline"></i></button>
+<hr style="color:white ">
+<div class="area">
+<textarea id="txt" rows="50" cols="50" placeholder="write here..."></textarea>
+</div></div>
+
+
+
+<script>
+    function myfontfamily() {
+        var x = document.getElementById("fontfamily").value;
+        document.getElementById("txt").style.fontFamily = x;
+    }
+function myfontsize() {
+    var y = document.getElementById("fontsize").value;
+    document.getElementById("txt").style.fontSize = y;
+}
+
+function mybold() {
+var a = document.getElementById("txt").style.fontWeight;
+if (a == 'bold') {document.getElementById("txt").style.fontWeight = 'normal';}
+else {document.getElementById("txt").style.fontWeight = 'bold';}
+}
+
+function myitalic() {
+var b = document.getElementById("txt").style.fontStyle;
+if (b == 'italic') {document.getElementById("txt").style.fontStyle = 'normal';}
+else {document.getElementById("txt").style.fontStyle = 'italic';}
+}
+
+function myunderline() {
+var b = document.getElementById("txt").style.textDecoration;
+if (b == 'underline') {document.getElementById("txt").style.textDecoration = 'none';}
+else {document.getElementById("txt").style.textDecoration = 'underline';}
+}
+</script>
+</body>
+</html>
